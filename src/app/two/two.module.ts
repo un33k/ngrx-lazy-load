@@ -24,4 +24,8 @@ import { TodosEffectsService } from './effects/todos-effects.service';
     TodosService
   ]
 })
-export class TwoModule { }
+export class TwoModule {
+  constructor() {
+    console.log('TwoModule instantiated.');
+  }
+}

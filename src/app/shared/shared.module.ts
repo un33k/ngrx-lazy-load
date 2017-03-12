@@ -24,4 +24,8 @@ export class SharedModule {
       ]
     };
   }
+
+  constructor() {
+    console.log('SharedModule instantiated.');
+  }
 }

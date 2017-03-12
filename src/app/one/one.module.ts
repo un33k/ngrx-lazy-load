@@ -24,4 +24,8 @@ import { PostsEffectsService } from './effects/posts-effects.service';
     PostsService
   ]
 })
-export class OneModule { }
+export class OneModule {
+  constructor() {
+    console.log('OneModule instantiated.');
+  }
+}
