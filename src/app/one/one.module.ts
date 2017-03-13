@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpModule } from '@angular/http';
 import { StoreModule } from '@ngrx/store';
-import { EffectsModule } from '@ngrx/effects';
 
 import { OneRoutingModule } from './one-routing.module';
 import { HomeComponent } from './home/home.component';
 import { PostsService } from './services/posts.service';
 import { PostsEffectsService } from './effects/posts-effects.service';
+import { HackedEffectsModule } from '../hacked-effects/hacked-effects.module';
 
 @NgModule({
   imports: [
@@ -15,7 +15,7 @@ import { PostsEffectsService } from './effects/posts-effects.service';
     OneRoutingModule,
     HttpModule,
     StoreModule,
-    EffectsModule.run(PostsEffectsService)
+    HackedEffectsModule.run(PostsEffectsService)
   ],
   declarations: [
     HomeComponent

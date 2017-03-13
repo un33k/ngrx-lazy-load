@@ -3,15 +3,15 @@ import { CommonModule } from '@angular/common';
 import { HttpModule } from '@angular/http';
 import { UsersService } from './services/users.service';
 import { UsersEffectsService } from './effects/users-effects.service';
-import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
+import { HackedEffectsModule } from '../hacked-effects/hacked-effects.module';
 
 @NgModule({
   imports: [
     CommonModule,
     HttpModule,
     StoreModule,
-    EffectsModule.run(UsersEffectsService)
+    HackedEffectsModule.run(UsersEffectsService)
   ],
   declarations: []
 })
