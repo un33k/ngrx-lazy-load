@@ -9,9 +9,9 @@ import * as ui from './ui-state';
 import * as users from './users';
 
 export interface State {
-  router: router.RouterState;
-  ui: ui.State;
-  users: users.State;
+  readonly router: router.RouterState;
+  readonly ui: ui.State;
+  readonly users: users.State;
 }
 
 const reducers = {
@@ -20,7 +20,7 @@ const reducers = {
   users: users.reducer
 };
 
-export function createReducer(asyncReducers = {}): ActionReducer<any> {
+export const createReducer = (asyncReducers = {}): ActionReducer<any> => {
   if (isDevMode()) {
     return compose(storeFreeze, combineReducers)(Object.assign(reducers, asyncReducers));
   }
